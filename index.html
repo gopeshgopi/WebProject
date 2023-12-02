@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 15 Puzzle Game</title>
+    <meta name="description" content="The 15 Puzzle Game">
+    <link rel="shortcut icon" href="assets/logo.png">
+    <link rel="stylesheet" href="styles/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Orbitron:wght@400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>The 15 Puzzle Game</h1>
+    </header>
+    <div class="wrapper">
+        <div class="row navbar">
+            <div class="col-1-of-3-uneven-1 scorebox">
+                <p class="scorebox__el scorebox__time">Time: <br /><span id="time">00:00</span></p>
+                <p class="scorebox__el scorebox__moves">Moves: <span id="moves">0</span></p>
+            </div>
+            <div class="col-1-of-3-uneven-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-1-of-2-uneven-1 column navbar game-controls">
+                <p style="color: black;" class="pause">PAUSE</p>
+            </div>
+            <div class="col-1-of-2-uneven-2 arena">
+                <table class="arena__table" style="border: 0cap;"></table>
+            </div>
+            <div class="col-1-of-2-uneven-1 column navbar toggle-mode__div game-controls">
+                <p style="color: black;" class="toggle-mode">NUMBERS</p>
+            </div>
+        </div>
+        <div class="winner-alert alert-box hidden">
+            <p class="winner-alert__text">!!!   SUCCESSFULLY COMPLETED  !!!</p>
+            <p>Time: <span class="winner-alert__time"></span></p>
+            <p style="color: white;">Moves: <span class="winner-alert__moves"></span></p>
+        </div>
+        <div class="welcome alert-box">
+            <h1>The 15 Puzzle Game</h1>
+            <div class="welcome__boardsize">
+                <label for="boardsize-row">Rows: </label>
+                <input type="number" id="boardsize-row" name="boardsize-Row" min="2" value="4">
+                <label for="boardsize-col">Columns: </label>
+                <input type="number" id="boardsize-col" name="boardsize-Col" min="2" value="4">
+            </div>
+            <div class="welcome__pics">
+                <p class="welcome__pics-text">Choose your Picture: </p>
+                <div class="welcome__pics-gallery">
+                    <label for="pic1"><img src="assets/img-1.jpg" alt="Pathway" class="pic1-label"></label>
+                    <label for="pic2"><img src="assets/img-2.jpg" alt="Apples" class="pic2-label"></label>
+                    <label for="pic3"><img src="assets/img-3.jpg" alt="Victory" class="pic3-label"></label>
+                    <label for="pic4"><img src="assets/img-4.jpg" alt="Chess" class="pic4-label"></label>
+                    <label for="pic5" id="imageUploader"><img src="assets/img-5-c.jpg" alt="Just numbers" class="pic5-label"></label>
+                </div>
+
+                <audio id="my_audio" src="assets/audio.mp3" loop="loop"></audio>
+
+            </div>
+            <div class="welcome__proceed">
+                <p class="welcome__proceed-start">START</p> 
+            </div>
+        </div>
+    </div>
+    <div class="overlay">
+        &nbsp;
+    </div>
+    <div class="input-tags">
+        <input type="radio" id="theme1" name="theme" class="theme-option checkable-text" checked />
+        <input type="radio" id="theme2" name="theme" class="theme-option checkable-text" />
+        <input type="radio" id="theme3" name="theme" class="theme-option checkable-text" />
+        <input type="radio" id="pic1" name="playpic" class="checkable-pic" />
+        <input type="radio" id="pic2" name="playpic" class="checkable-pic" checked />
+        <input type="radio" id="pic3" name="playpic" class="checkable-pic" />
+        <input type="radio" id="pic4" name="playpic" class="checkable-pic" />
+        <input type="radio" id="pic5" name="playpic" class="checkable-pic" />
+        <input type="checkbox" name="challenge" id="challenge-subzero" class="challenge-option checkable-text" value="SUBZERO" />
+        <input type="checkbox" name="challenge" id="challenge-level2" class="challenge-option checkable-text" value="LEVEL2" />
+        <input type="checkbox" name="challenge" id="challenge-impossible" class="challenge-option checkable-text" value="MISSION:IMPOSSIBLE" />
+        <input type="file" name="uploadedImg" id="uploadedImg-pic" />
+    </div>
+
+    <script src="scripts/game.js"></script>
+</body>
+</html>
